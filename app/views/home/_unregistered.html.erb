@@ -6,7 +6,7 @@
         </tr>
     </thead>
     <tbody>
-        <% @registered_products.each do |product| %>
+        <% @unregistered_products.each do |product| %>
             <tr>
                 <td><%= product.product_name %></td>
                 <td><%= product.chemical %></td>
