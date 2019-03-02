@@ -1,4 +1,6 @@
-<h1>Registered Products</h1>
+<h2>Registered Products</h2>
 <%= render partial: "registered" %>
+<%= paginate @registered_products %>
 <h2>Unregistered Products</h2>
 <%= render partial: "unregistered" %>
+<%= paginate @unregistered_products %>
