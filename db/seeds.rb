@@ -63,5 +63,30 @@ def get_unregistered_products
     end
 end
 
+def get_cosmetics
+    # raw html
+    unparsed_page = HTTParty.get('https://www.npra.gov.my/index.php/en/consumers/safety-information/cancellation-of-notified-cosmetic-products')
+    # parsed
+    parsed_page = Nokogiri::HTML(unparsed_page)
+
+    cosmetics_name = Array.new
+    parsed_page.css("table tbody tr td[@class='ari-tbl-col-1']","table[@id='at_192'] tbody tr td[@class='ari-tbl-col-2']").each do |name|
+        if name.text.length > 5
+        	cosmetics_name << name.text
+        end
+    end
+
+    cosmetics_chemical = Array.new
+    parsed_page.css("table[@id='at_396'] tbody tr td[@class='ari-tbl-col-3']","table[@id='at_192'] tbody tr td[@class='ari-tbl-col-4']").each do |chemical|
+    		cosmetics_chemical << chemical.text
+    	end
+
+    cosmetics = Hash[cosmetics_name.zip(cosmetics_chemical)]
+    cosmetics.each do |name, chemical|
+        cosmetic = Product.create(product_name: name, chemical: chemical, product_type: 2)
+    end
+end
+
 get_registered_products
 get_unregistered_products
+get_cosmetics
