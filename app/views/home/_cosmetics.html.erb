@@ -1,0 +1,17 @@
+<table>
+    <thead>
+        <tr>
+            <th scope='col'>Name</th>
+            <th scope='col'>Chemical</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @cosmetics.each do |cosmetic| %>
+            <tr>
+                <td><%= cosmetic.product_name %></td>
+                <td><%= cosmetic.chemical %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<%= paginate @cosmetics, param_name: :cosmetic_page_no %>
