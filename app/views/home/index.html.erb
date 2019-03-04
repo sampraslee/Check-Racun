@@ -1,5 +1,10 @@
 <h2>Registered Products</h2>
-<%= render partial: "registered" %>
+<%= form_with url: root_path, method: "GET" do |f| %>
+    <%= f.text_field :registered_search, placeholder: "Search", id: "registered-search" %>
+<% end %>
+<div id="registered-products">
+    <%= render partial: "home/registered" %>
+</div>
 <h2>Unregistered Products</h2>
 <%= render partial: "unregistered" %>
 <h2>Cosmetic Products</h2>

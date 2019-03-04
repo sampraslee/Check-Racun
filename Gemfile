@@ -24,6 +24,8 @@ gem 'nokogiri'
 gem 'rb-readline'
 # for pagination
 gem 'kaminari'
+# jQuery
+gem 'jquery-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
