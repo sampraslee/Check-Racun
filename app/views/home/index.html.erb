@@ -1,11 +1,24 @@
+<%# Registered Products %>
 <h2>Registered Products</h2>
 <%= form_with url: root_path, method: "GET" do |f| %>
-    <%= f.text_field :registered_search, placeholder: "Search", id: "registered-search" %>
+    <%= f.text_field :registered_search, placeholder: "Search" %>
 <% end %>
 <div id="registered-products">
     <%= render partial: "home/registered" %>
 </div>
+<%# Unregistered Products %>
 <h2>Unregistered Products</h2>
-<%= render partial: "unregistered" %>
+<%= form_with url: root_path, method: "GET" do |f| %>
+    <%= f.text_field :unregistered_search, placeholder: "Search" %>
+<% end %>
+<div id="unregistered-products">
+    <%= render partial: "unregistered" %>
+</div>
+<%# Cosmetic Products%>
 <h2>Cosmetic Products</h2>
-<%= render partial: "cosmetics" %>
+<%= form_with url: root_path, method: "GET" do |f| %>
+    <%= f.text_field :cosmetics_search, placeholder: "Search" %>
+<% end %>
+<div id="cosmetic-products">
+    <%= render partial: "cosmetics" %>
+</div>
