@@ -14,4 +14,4 @@
         <% end %>
     </tbody>
 </table>
-<%= paginate @unregistered_products, param_name: :unregistered_page_no %>
+<%= paginate @unregistered_products, remote: true ,param_name: :unregistered_page_no %>

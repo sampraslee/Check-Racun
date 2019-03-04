@@ -14,4 +14,4 @@
         <% end %>
     </tbody>
 </table>
-<%= paginate @cosmetics, param_name: :cosmetic_page_no %>
+<%= paginate @cosmetics, remote: true ,param_name: :cosmetic_page_no %>
