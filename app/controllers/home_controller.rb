@@ -18,9 +18,9 @@ class HomeController < ApplicationController
 
     @cosmetics =     
     if params[:cosmetics_search]
-      Product.where("product_name ILIKE ? AND product_type = ? OR chemical ILIKE ? AND product_type = ?","%#{params[:cosmetics_search]}%", 2, "%#{params[:cosmetics_search]}%", 2).page params[:cosmetics_page_no]
+      Product.where("product_name ILIKE ? AND product_type = ? OR chemical ILIKE ? AND product_type = ?","%#{params[:cosmetics_search]}%", 2, "%#{params[:cosmetics_search]}%", 2).page params[:cosmetic_page_no]
     else
-      Product.where(product_type: 2).page params[:cosmetics_page_no]
+      Product.where(product_type: 2).page params[:cosmetic_page_no]
     end
   end
 end
