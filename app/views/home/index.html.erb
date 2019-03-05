@@ -1,3 +1,15 @@
+<%# Header %>
+<header class="py-2">
+    <div class="text-center">
+        <a class="display-4 text-dark" href="#">Check Racun</a>
+    </div>
+</header>
+<hr/>
+<%# Jumbotron %>
+<div class="jumbotron">
+    <h3 class="display-4">Do you know...?</h3>
+    <p class="lead">If the products you're taking contain dangerous chemicals? Do you know which cosmetic products to avoid? <br/> Check Racun aims to help Malaysian consumers filter out the registered and unregistered complementary and alternative medicines as well as cosmetic products that have been deemed dangerous by the National Pharmaceutical Regulatory Agency of Malaysia.<br/>All information was extracted from the NPRA <a href="https://www.npra.gov.my/index.php/en/consumers.html">website</a>.</p>
+</div>
 <%# Registered Products %>
 <h2>Registered Products</h2>
 <%= form_with url: root_path, method: "GET" do |f| %>
