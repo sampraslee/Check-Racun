@@ -1,7 +1,7 @@
 <%# Header %>
-<header class="py-2">
+<header class="pt-2">
     <div class="text-center">
-        <a class="display-4 text-dark" href="#">Check Racun</a>
+        <a class="display-4 text-dark text-decoration-none" href="#">Check Racun</a>
     </div>
 </header>
 <hr/>
@@ -10,27 +10,36 @@
     <h3 class="display-4">Do you know...?</h3>
     <p class="lead">If the products you're taking contain dangerous chemicals? Do you know which cosmetic products to avoid? <br/> Check Racun aims to help Malaysian consumers filter out the registered and unregistered complementary and alternative medicines as well as cosmetic products that have been deemed dangerous by the National Pharmaceutical Regulatory Agency of Malaysia.<br/>All information was extracted from the NPRA <a href="https://www.npra.gov.my/index.php/en/consumers.html">website</a>.</p>
 </div>
-<%# Registered Products %>
-<h2>Registered Products</h2>
-<%= form_with url: root_path, method: "GET" do |f| %>
-    <%= f.text_field :registered_search, placeholder: "Search" %>
-<% end %>
-<div id="registered-products">
-    <%= render partial: "home/registered" %>
-</div>
-<%# Unregistered Products %>
-<h2>Unregistered Products</h2>
-<%= form_with url: root_path, method: "GET" do |f| %>
-    <%= f.text_field :unregistered_search, placeholder: "Search" %>
-<% end %>
-<div id="unregistered-products">
-    <%= render partial: "unregistered" %>
-</div>
-<%# Cosmetic Products%>
-<h2>Cosmetic Products</h2>
-<%= form_with url: root_path, method: "GET" do |f| %>
-    <%= f.text_field :cosmetics_search, placeholder: "Search" %>
-<% end %>
-<div id="cosmetic-products">
-    <%= render partial: "cosmetics" %>
-</div>
+<main class="container">
+    <%# Tables %>
+    <%# Registered Products %>
+    <div class="row flex-nowrap justify-content-between align-items-end border-bottom">
+        <h2 class="font-weight-bold font-italic">Registered Products</h2>
+        <%= form_with url: root_path, class: "form-inline",method: "GET" do |f| %>
+            <%= f.text_field :registered_search, placeholder: "Search", class: "form-control mb-2" %>
+        <% end %>
+    </div>
+    <div class="mt-3" id="registered-products">
+        <%= render partial: "home/registered" %>
+    </div>
+    <%# Unregistered Products %>
+    <div class="row flex-nowrap justify-content-between align-items-end border-bottom">
+        <h2 class="font-weight-bold font-italic mt-4">Unregistered Products</h2>
+        <%= form_with url: root_path, class: "form-inline",method: "GET" do |f| %>
+            <%= f.text_field :unregistered_search, placeholder: "Search", class: "form-control mb-2" %>
+        <% end %>
+    </div>
+    <div class="mt-3" id="unregistered-products">
+        <%= render partial: "unregistered" %>
+    </div>
+    <%# Cosmetic Products%>
+    <div class="row flex-nowrap justify-content-between align-items-end border-bottom">
+        <h2 class="font-weight-bold font-italic mt-4">Cosmetic Products</h2>
+        <%= form_with url: root_path, class: "form-inline",method: "GET" do |f| %>
+            <%= f.text_field :cosmetics_search, placeholder: "Search", class: "form-control mb-2" %>
+        <% end %>
+    </div>
+    <div class="mt-3" id="cosmetic-products">
+        <%= render partial: "cosmetics" %>
+    </div>
+</main>

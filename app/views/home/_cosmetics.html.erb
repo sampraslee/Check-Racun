@@ -1,5 +1,5 @@
-<table>
-    <thead>
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
         <tr>
             <th scope='col'>Name</th>
             <th scope='col'>Chemical</th>
@@ -14,4 +14,6 @@
         <% end %>
     </tbody>
 </table>
-<%= paginate @cosmetics, remote: true ,param_name: :cosmetic_page_no %>
+<ul class="pagination justify-content-center">
+    <%= paginate @cosmetics, remote: true ,param_name: :cosmetic_page_no %>
+</ul>
