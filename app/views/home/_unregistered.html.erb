@@ -1,4 +1,4 @@
-<table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover shadow">
     <thead class="thead-dark">
         <tr>
             <th scope='col'>Name</th>
@@ -7,7 +7,7 @@
     </thead>
     <tbody>
         <% @unregistered_products.each do |product| %>
-            <tr>
+            <tr class="table-info">
                 <td><%= product.product_name %></td>
                 <td><%= product.chemical %></td>
             </tr>
