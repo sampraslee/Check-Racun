@@ -45,11 +45,11 @@ span {
     font-size: 23px;
 }
 
-a {
+.contact-info {
     color: white;
 }
 
-a:hover {
+.contact-info:hover {
     color: lightblue;
 }
 
